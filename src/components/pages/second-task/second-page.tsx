@@ -66,7 +66,7 @@ const SecondPage: React.FC<Props> = ({ id, setActivePanelPage }) => {
           onClick={() => setActivePanelPage("main")}
           stretched
           mode="primary"
-          style={{ width: "10%" }}>
+          style={{ width: "20%" }}>
           Задание 1
         </Button>
       </PanelHeader>
