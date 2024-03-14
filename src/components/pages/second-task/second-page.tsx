@@ -42,7 +42,9 @@ const SecondPage: React.FC<Props> = ({ id, setActivePanelPage }) => {
 
   useEffect(() => {
     if (debouncedValue) {
-      fetchAge(debouncedValue);
+      setTimeout(() => {
+        fetchAge(debouncedValue);
+      }, 2500);
     }
   }, [debouncedValue]);
 
@@ -61,15 +63,7 @@ const SecondPage: React.FC<Props> = ({ id, setActivePanelPage }) => {
 
   return (
     <Panel id={id}>
-      <PanelHeader>
-        <Button
-          onClick={() => setActivePanelPage("main")}
-          stretched
-          mode="primary"
-          style={{ width: "20%" }}>
-          Задание 1
-        </Button>
-      </PanelHeader>
+      <PanelHeader>Тестовое задание</PanelHeader>
       <Group mode="card" header={<Header mode="secondary">Задание 2</Header>}>
         <FormLayoutGroup>
           <FormItem htmlFor="input-name" top="Введите своё имя">
@@ -82,6 +76,13 @@ const SecondPage: React.FC<Props> = ({ id, setActivePanelPage }) => {
         {isLoading && <Spinner size="large" />}
         {error && <Div style={{ color: "red" }}>{error}</Div>}
         {ageValue > 0 && <Card>{ageValue}</Card>}
+        <Button
+          onClick={() => setActivePanelPage("main")}
+          stretched
+          mode="primary"
+          style={{ width: `20%`, height: `40px`, marginTop: `30px` }}>
+          Задание 1
+        </Button>
       </Group>
     </Panel>
   );

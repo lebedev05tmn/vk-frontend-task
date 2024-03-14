@@ -47,15 +47,7 @@ const FirstPage: React.FC<Props> = ({ id, setActivePanelPage }) => {
 
   return (
     <Panel id={id}>
-      <PanelHeader>
-        <Button
-          onClick={() => setActivePanelPage("second")}
-          stretched
-          mode="primary"
-          style={{ width: `20%` }}>
-          Задание 2
-        </Button>
-      </PanelHeader>
+      <PanelHeader>Тестовое задание</PanelHeader>
       <Group mode="card" header={<Header mode="secondary">Задание 1</Header>}>
         <FormItem>
           <Textarea
@@ -77,6 +69,13 @@ const FirstPage: React.FC<Props> = ({ id, setActivePanelPage }) => {
           {isLoading ? "Загрузка..." : "Отправить запрос"}
         </Button>
         {error && <div style={{ color: "red" }}>{error}</div>}
+        <Button
+          onClick={() => setActivePanelPage("second")}
+          stretched
+          mode="primary"
+          style={{ width: `20%`, height: `50px`, marginTop: `30px` }}>
+          Задание 2
+        </Button>
       </Group>
     </Panel>
   );
